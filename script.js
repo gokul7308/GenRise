@@ -53,3 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // CSS html { scroll-behavior: smooth; } natively handles all our anchor links
 });
+
+// Template Selection Logic
+function selectTemplate(templateName) {
+    console.log("Selected template: " + templateName);
+    
+    // Scroll to contact section
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+    
+    // Pre-fill the message field if it exists
+    const messageField = document.getElementById("message");
+    if (messageField) {
+        messageField.value = "I'm interested in the '" + templateName + "' template. Please provide more details on how we can get started.";
+        messageField.focus();
+    }
+}
